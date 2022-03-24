@@ -24,10 +24,21 @@ body {
 }
 
 .img-container {
+    position: relative;
     height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.nft-preview-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: .3s ease;
+    opacity: 0;
 }
 
 .nft-preview {
@@ -36,9 +47,14 @@ body {
     height: 100%;
 } 
 
+.view-icon {
+    position: absolute;
+    top: 43%;
+    left: 43%;
+}
+
 .content {
     margin-top: 5%;
-    /*background-color: white;*/
     height: 50%;
     display: flex;
     flex-direction: column;
@@ -108,6 +124,25 @@ body {
     color:white;
 }
 
+
+/* hover and overlay effect */
+.creator-highlight:hover, .title:hover {
+    color: hsl(178, 100%, 50%);
+    cursor: pointer;
+}
+
+.nft-preview-overlay:hover {
+    background-color: hsl(178, 100%, 50%);
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.view-icon:hover {
+    opacity: 1;
+} 
+
+
+/* media changes */
 @media only screen and (max-width: 450px) {
     .main-container {
         width: 90%;
@@ -139,10 +174,4 @@ body {
     .price-time {
         font-size: 18px;
     }
-     
 }    
-
-.creator-highlight:hover {
-    color: hsl(178, 100%, 50%);
-    cursor: pointer;
-}
